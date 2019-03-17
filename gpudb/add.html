@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>MY GPU Datastore</title>
+    <style>
+
+</style>
+</head>
+
+
+<body>
+  <style>
+  p#welcome{
+    color: black;
+    margin-top: 12px;
+    font-size:20px;users_name
+    text-align: center;
+  }
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #D3D3D3;
+  color: black;
+  text-align: center;
+}
+#btn_click{
+    width:90px;
+    margin-top:10px;
+    margin-left:100px;
+
+}
+.container-fluid{
+    background-color:white;
+    text-align:center;
+    height:60px;
+    color:#333;
+
+}
+table{
+    font-family: "Times New Roman", Times, serif;
+   // box-shadow: 5px 5px 20px 5px #333;
+   //background-color:coral;
+
+}
+table td{
+    padding:10px;
+
+}
+body{
+  background-color:white;
+  text-align:center;}
+  </style>
+
+      <nav class="navbar navbar-default" align="center">
+     <div class="container-fluid" align="center">
+     <div class="navbar-header" align="center">
+
+     <a class="navbar-brand" href="/"><p style="text-align:center">Welcome To Graphics Processing Unit Datastore</p></a>
+
+     </div>
+     <ul class="nav navbar-nav navbar-right">
+   </ul>
+     </div>
+    </nav>
+
+    {% if error %}
+      <div align="center">
+        {{error}}
+      </div>
+    {% endif %}
+    <div align="center">
+
+            <b>
+  <h1>   GPU Details </h1>
+        </b>
+            <br/><br/></font>
+    </div>
+
+
+    <form method="post" action="/edit">
+      <div class="row" align="center">
+          <table border="0" cellpadding="5">
+
+            <tr>
+                <td colspan="2">
+                    <label for="Device Name">Device Name</label>
+                </td>
+
+                <td>
+                    <input type="text" name="device_name" required=True placeholder="Device Name"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Device Name">Manufacturer </label>
+                </td>
+
+                <td>
+                    <input type="text" name="manufacturer" required=True placeholder="Manufacturer"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="Driver">Date </label>
+                </td>
+
+                <td>
+                    <input type="date" name="dateIssue" required=True placeholder="Date"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <b><i>Please check the following to set the values to TRUE:</i></b>
+                </td>
+            </tr>
+             <tr>
+                <td>&nbsp;</td>
+                <td><input type="checkbox" name="GeometryShader">GeometryShader <br></td>
+                <td><input type="checkbox" name="TesselationShaderr">TesselationShaderr <br></td>
+
+            </tr>
+            <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="checkbox" name="SparseBinding">SparseBinding <br></td>
+                    <td><input type="checkbox" name="ShaderInt16">ShaderInt16 <br></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><input type="checkbox" name="TextureCompressionETC2">TextureCompressionETC2 <br></td>
+              <td><input type="checkbox" name="vertexPipelineStoresAndAtomics">vertexPipelineStoresAndAtomics<br></td>
+            </tr>
+          </table>
+
+
+        <input type="submit" value="Add" name="button" id="btn_click" />
+    </form>
+    <form method="post" action="/edit">
+        <input type="submit" value="Cancel" name="button" id="btn_click"/>
+    </form>
+
+  </div>
+</body>
+
+</html>
